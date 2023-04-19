@@ -5,17 +5,17 @@ $search_area = $_POST["area"];
 if($search_param==""||$search_area==""){
     echo '<div class="experienced-doctors-near">Please Enter Doctor Type & Area Name</div>';
 return 0;
-    
+
 }
 
-if(isset($_POST["search"]) && isset($_POST["area"])){ 
+if(isset($_POST["search"]) && isset($_POST["area"])){
 // echo $search_param;
 // echo $search_area;
 
 $host= "localhost";
-$dbuser= "id20430870_docmatch";
-$dbpass= "Admin@123456";
-$dbname= "id20430870_doctordb";
+$dbuser= "root";
+$dbpass= "abcd@1A.";
+$dbname= "docfind_database";
 
 $conn= new mysqli($host, $dbuser, $dbpass, $dbname);
 
@@ -29,13 +29,13 @@ $result=$conn->query($sql);
 if($result->num_rows > 0){
     $data = '<div class="experienced-doctors-near">Doctors Found Near You... </div>';
     $doctor_data="";
- 
+
     while($row = $result->fetch_assoc()){
       $doctorid = $row["ID"];
       $doctorname = $row["DoctorName"];
       $doctorinfo = $row["DoctorInformation"];
       $doctorimg = $row["DoctorImage"];
-   
+
       $doctor_data .= '<div class="search-section">
          <div class="search-box">
             <img class="rectangle-icon" alt="" src="'.$doctorimg.'" />
@@ -44,7 +44,7 @@ if($result->num_rows > 0){
          </div>
       </div>';
    }
-   
+
 
 
 }else{
@@ -55,5 +55,5 @@ if($result->num_rows > 0){
     $data =  '<div class="experienced-doctors-near"> Bad Query </div>';
 }
 $data = $data.$doctor_data;
-echo $data.;
+echo $data;
 ?>

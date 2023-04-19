@@ -5,7 +5,7 @@ $search_area = $_POST["area"];
 if($search_param==""||$search_area==""){
     echo '<div class="text">Please Enter Doctor Type & Area Name</div>';
 return 0;
-    
+
 }
 
 if(isset($_POST["search"]) && isset($_POST["area"])){ 
@@ -13,9 +13,9 @@ if(isset($_POST["search"]) && isset($_POST["area"])){
 // echo $search_area;
 
 $host= "localhost";
-$dbuser= "id20430870_docmatch";
-$dbpass= "Admin@123456";
-$dbname= "id20430870_doctordb";
+$dbuser= "root";
+$dbpass= "abcd@1A.";
+$dbname= "docfind_database";
 
 $conn= new mysqli($host, $dbuser, $dbpass, $dbname);
 
@@ -30,7 +30,7 @@ if($result->num_rows > 0)
 {
     $data = '<div class="text">Doctor Found in Your Area</div>';
     $doctor_data="";
- 
+
    while($row = $result->fetch_assoc()){
        $doctorid = $row["ID"];
        $doctorname = $row["DoctorName"];
