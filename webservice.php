@@ -8,13 +8,13 @@ return 0;
 
 }
 
-if(isset($_POST["search"]) && isset($_POST["area"])){ 
+if(isset($_POST["search"]) && isset($_POST["area"])){
 // echo $search_param;
 // echo $search_area;
 
 $host= "localhost";
 $dbuser= "root";
-$dbpass= "abcd@1A.";
+$dbpass= "";
 $dbname= "docfind_database";
 
 $conn= new mysqli($host, $dbuser, $dbpass, $dbname);

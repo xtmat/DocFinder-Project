@@ -14,7 +14,7 @@ if(isset($_POST["search"]) && isset($_POST["area"])){
 
 $host= "localhost";
 $dbuser= "root";
-$dbpass= "abcd@1A.";
+$dbpass= "naklipassword";
 $dbname= "docfind_database";
 
 $conn= new mysqli($host, $dbuser, $dbpass, $dbname);
